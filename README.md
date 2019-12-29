@@ -2,6 +2,13 @@
 
 ---
 
+## ReadMe Summary
+• What is a dotted noise ?
+• How to use the generator
+• About
+
+---
+
 ## What is a dotted noise ?
 A dotted noise generator is simply a way of generating noise wich I come up with. A dotted noise algorithm simply place points at random positions and calculate for each pixels the distance between these and the pixel. Then, the pixel's brightness is calculated from the distance.
 
