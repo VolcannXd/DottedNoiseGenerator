@@ -48,5 +48,5 @@ This parameter (if set to true) prevent obvious cut in the image if it is repeat
 ---
 
 ## About
-This Algorithm and software were both developped by Arthur Detaille. You can contact me on [twitter](https://twitter.com/arthur_detaille) or by [e-mail](mailto:arthurdetaille.pro@gmail.com)
+This Algorithm and software were both developped by Arthur Detaille. You can contact me on [twitter](https://twitter.com/arthur_detaille) or by [e-mail](mailto:arthurdetaille.pro@gmail.com).<br/>
 I want to thank George Hotz a.k.a. GeoHot wich is my everyday's source of inspiration; probably, with Markus Personn, the programmer I respect the most. Go check his work [here](https://www.youtube.com/channel/UCwgKmJM4ZJQRJ-U5NjvR2dg)
