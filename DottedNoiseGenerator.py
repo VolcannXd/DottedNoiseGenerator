@@ -5,6 +5,8 @@ import tkinter.messagebox
 import tkinter.filedialog
 import webbrowser
 
+print("Log: random, math, tkinter and webbrowser were imported correctly.")
+
 class Vec2 :
     def __init__(self, x, y) :
         self.x = x
@@ -32,16 +34,20 @@ def generate_points(noise) :
 def generateNoiseMap(noiseParameters) :
     points = generate_points(noiseParameters)
 
-    pixels = []
+    pixels = [None] * (512*512)
+    print(len(pixels))
 
     for y in range(0, noiseParameters.size) :
         for x in range(0, noiseParameters.size) :
             index = (y * noiseParameters.size) + x
-            pixels.append(Pixel(Vec2(x, y), "white"))
+            color = (255, 255, 255)
+
+            pixels[index] = Pixel(Vec2(x, y), RgbToHex(color))
 
     return pixels
 
-def hexToRGB(rgb) :
+def RgbToHex(rgb) :
+    # Return Hex value corresponding to the rgb value
     return "#%02x%02x%02x" % rgb
 
 def drawNoise() :
@@ -58,15 +64,17 @@ def drawNoise() :
         print("err: _canvas type == none type!")
 
 def about() :
+    print("Log: Action: infos")
     tkinter.messagebox.showinfo("A propos","Test of a dotted noise generator\n(C) Arthur Detaille - 2020")
 
 def help_() :
+    print("Log: Action: help")
     webbrowser.open_new("https://github.com/VolcannXd/DottedNoiseGenerator")
 
 root = Tk()
 root.title("Dotted noise generator")
 root.resizable(False, False)
-
+print("Log: Frame has been created.")
 # MENU BAR
 menubar = Menu(root)
 
@@ -93,6 +101,7 @@ menubar.add_cascade(label="File", menu=menuFile)
 menubar.add_cascade(label="Help", menu=menuHelp)
 menubar.add_cascade(label="Image", menu=menuImage)
 root.config(menu=menubar)
+print("Log: Menubar has been created and setup.")
 
 # Noise Generation parameters
 generationGroup = LabelFrame(root, text="Generation paramters")
@@ -120,8 +129,12 @@ generateButton.pack(side=BOTTOM, padx = 5, pady = 5)
 thresholdScale.set(50)
 scaleScale.set(7)
 
+print("Log: generation label Frame has been created and setup.")
+
 #   CANVAS
 _canvas = Canvas(root, width = 512, height = 512, bg = 'black')
 _canvas.pack(side = LEFT, padx =5, pady =5)
+
+print("Log: Canvas has been created and setup.")
 
 root.mainloop()
