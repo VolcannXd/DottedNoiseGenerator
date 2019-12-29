@@ -4,6 +4,7 @@ from tkinter import *
 import tkinter.messagebox
 import tkinter.filedialog
 import webbrowser
+import WriteAndLoadManager as WLM
 
 print("Log: random, math, tkinter and webbrowser were imported correctly.")
 
@@ -71,6 +72,21 @@ def help_() :
     print("Log: Action: help")
     webbrowser.open_new("https://github.com/VolcannXd/DottedNoiseGenerator")
 
+def debug() :
+    print("Log: debug")
+
+def newFile() :
+   prefs =  WLM.load("default-options.pref")
+   scaleScale.set(int(prefs[1]))
+   thresholdScale.set(int(prefs[2]))
+
+   if prefs[3] == 0 : InvertChecker.select()
+   else : InvertChecker.deselect()
+
+   if prefs[4] == 0 : SeamlessChecker.select()
+   else : SeamlessChecker.deselect()
+    
+
 root = Tk()
 root.title("Dotted noise generator")
 root.resizable(False, False)
@@ -80,7 +96,7 @@ menubar = Menu(root)
 
 # FILE MENU
 menuFile = Menu(menubar, tearoff=0)
-menuFile.add_command(label="New")
+menuFile.add_command(label="New", command=newFile)
 menuFile.add_command(label="Open")
 menuFile.add_command(label="Save As")
 menuFile.add_separator()
@@ -123,7 +139,7 @@ isSeamless = IntVar()
 SeamlessChecker = Checkbutton(generationGroup, text="seamless noise", variable=isSeamless)
 SeamlessChecker.pack(side=RIGHT, padx = 25, pady = 5)
 
-generateButton = Button(generationGroup, text = "Generate Noise", command=drawNoise)
+generateButton = Button(generationGroup, text = "Generate Noise", command=debug)
 generateButton.pack(side=BOTTOM, padx = 5, pady = 5)
 
 thresholdScale.set(50)

@@ -1,0 +1,20 @@
+:PREFS
+size 512
+scale 7
+threshold 50
+invert 0
+seamless 0
+
+:INFOS
+name noise example
+creator Arthur Detaille
+date 30 12 2019 00 52
+
+:POINTS
+15 2
+125 65
+85 88
+67 450
+368 44
+15 200
+350 10
