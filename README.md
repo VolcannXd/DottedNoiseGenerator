@@ -3,9 +3,9 @@
 ---
 
 ## ReadMe Summary
-• What is a dotted noise ?
-• How to use the generator
-• About
+• What is a dotted noise ?\
+• How to use the generator\
+• About\
 
 ---
 
