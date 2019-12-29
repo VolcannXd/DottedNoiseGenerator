@@ -15,10 +15,11 @@ class Pixel :
         self.brightness = brightness
 
 class perlinNoise :
-    def __init__(self, size, points, scale) :
+    def __init__(self, size, points, scale, threshold) :
         self.size = size
         self.points = points
         self.scale = scale
+        self.threshold = threshold
 
 class noisePixelMap :
     def __init__(self, pixels) :
