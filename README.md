@@ -1,4 +1,6 @@
-# DottedNoiseGenerator
+#Dotted Noise
+#And the algorithm/soft to generate it
+##python 3.7
 
 ---
 
