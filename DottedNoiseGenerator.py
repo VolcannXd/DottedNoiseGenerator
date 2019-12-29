@@ -74,7 +74,7 @@ menubar = Menu(root)
 menuFile = Menu(menubar, tearoff=0)
 menuFile.add_command(label="New")
 menuFile.add_command(label="Open")
-menuFile.add_command(label="Save")
+menuFile.add_command(label="Save As")
 menuFile.add_separator()
 menuFile.add_command(label="Quit", command=root.destroy)
 
@@ -83,9 +83,15 @@ menuHelp = Menu(menubar, tearoff = 0)
 menuHelp.add_command(label="About", command=about)
 menuHelp.add_command(label="Help", command=help_)
 
+# IMAGE MENU
+menuImage = Menu(menubar, tearoff = 0)
+menuImage.add_command(label="Preferences")
+menuImage.add_command(label="Save Image As")
+
 # SETUP MENUS
 menubar.add_cascade(label="File", menu=menuFile)
 menubar.add_cascade(label="Help", menu=menuHelp)
+menubar.add_cascade(label="Image", menu=menuImage)
 root.config(menu=menubar)
 
 # Noise Generation parameters
