@@ -13,30 +13,30 @@ Simply specify parameters in the GUI and click 'generate'. Then, save your favor
 ---
 
 ## Parameters description
-### The 'size' parameter
+### The *size* parameter
 > type : Integer
 
 This parameter simply define the image size (wich is always a square): 512 is recomanded.
 
-### The **scale** parameter
+### The *scale* parameter
 > type : Integer
 
 The scale parameter is simply defining how many random points can spawn in your noise image
 
-### The **threshold** parameter
+### The *threshold* parameter
 > type : Integer
 
 This is more technical. The threshold indicate to the algorithm how far from a point the pixel is brightned.
 
-### The **invert** parameter
+### The *invert* parameter
 > type : Boolean
 
 If this parameter is true the brightness from the point is maximum.. Otherwise the brightness is minimal and pixels are brightning up with distance.
 
-### The **seamless** parameter
+### The *seamless* parameter
 > type : Boolean
 
-This parameter (if set to true) prevent obvious cut in the image it is repeated: to be used as textures.
+This parameter (if set to true) prevent obvious cut in the image if it is repeated: to be used as textures.
 
 ---
 
