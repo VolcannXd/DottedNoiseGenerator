@@ -24,20 +24,28 @@ Simply specify parameters in the GUI and click 'generate'. Then, save your favor
 ### The *size* parameter
 > type : Integer
 
+`128 < size < 1024`
+
 This parameter simply define the image size (wich is always a square): 512 is recomanded.
 
 ### The *scale* parameter
 > type : Integer
+
+`1 < scale < 100`
 
 The scale parameter is simply defining how many random points can spawn in your noise image
 
 ### The *threshold* parameter
 > type : Integer
 
+`1 < threshold < 500`
+
 This is more technical. The threshold indicate to the algorithm how far from a point the pixel is brightned.
 
 ### The *contrast* parameter
-> type : Double 0 <= contrast <= 1
+> type : Double 
+
+`0 <= contrast <= 1`
 
 This parameter is in charge of the contrast. Except that it can invert value when reaching 0.5 or above.
 

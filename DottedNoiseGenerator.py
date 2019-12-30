@@ -94,7 +94,11 @@ def drawNoise() :
 
 def about() :
     print("Log: Action: infos")
-    tkinter.messagebox.showinfo("A propos","Test of a dotted noise generator\n(C) Arthur Detaille - 2020")
+    tkinter.messagebox.showinfo("About","Test of a dotted noise generator\n(C) Arthur Detaille - 2020")
+
+def aboutImage() :
+    print("Log: Action: infos")
+    tkinter.messagebox.showinfo("About Image","512 x 512 pixels\nno AA")
 
 def help_() :
     print("Log: Action: help")
@@ -107,9 +111,6 @@ def newFile() :
    prefs =  WLM.load("default-options.pref")
    scaleScale.set(int(prefs[1]))
    thresholdScale.set(int(prefs[2]))
-
-   if prefs[3] == 0 : InvertChecker.select()
-   else : InvertChecker.deselect()
 
    if prefs[4] == 0 : SeamlessChecker.select()
    else : SeamlessChecker.deselect()
@@ -145,7 +146,7 @@ menuHelp.add_command(label="Help", command=help_)
 
 # IMAGE MENU
 menuImage = Menu(menubar, tearoff = 0)
-menuImage.add_command(label="Preferences")
+menuImage.add_command(label="About", command=aboutImage)
 menuImage.add_command(label="Save Image As")
 
 # SETUP MENUS
@@ -172,13 +173,9 @@ invertion = DoubleVar()
 invertionScale = Scale(generationGroup, orient="horizontal", label="Brightness Multiplier", from_=0, to=1, resolution=0.01, length=450, variable=invertion)
 invertionScale.pack()
 
-isInvert = IntVar()
-InvertChecker = Checkbutton(generationGroup, text="invert noise", variable=isInvert)
-InvertChecker.pack(side=LEFT, padx = 25, pady = 5)
-
 isSeamless = IntVar()
 SeamlessChecker = Checkbutton(generationGroup, text="seamless noise", variable=isSeamless)
-SeamlessChecker.pack(side=RIGHT, padx = 25, pady = 5)
+SeamlessChecker.pack(padx = 25, pady = 5)
 
 generateButton = Button(generationGroup, text = "Generate Noise", command=drawNoise)
 generateButton.pack(side=BOTTOM, padx = 5, pady = 5)
