@@ -36,10 +36,10 @@ The scale parameter is simply defining how many random points can spawn in your 
 
 This is more technical. The threshold indicate to the algorithm how far from a point the pixel is brightned.
 
-### The *invert* parameter
-> type : Boolean
+### The *contrast* parameter
+> type : Double 0 <= brightness <= 1
 
-If this parameter is true the brightness from the point is maximum.. Otherwise the brightness is minimal and pixels are brightning up with distance.
+This parameter is in charge of the brightness. Except that it can invert value when reaching 0.5 or above.
 
 ### The *seamless* parameter
 > type : Boolean
