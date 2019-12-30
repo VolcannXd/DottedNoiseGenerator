@@ -5,30 +5,14 @@ import tkinter.messagebox
 import tkinter.filedialog
 import webbrowser
 import WriteAndLoadManager as WLM
+import noiseManager
 
 print("Log: random, math, tkinter and webbrowser were imported correctly.")
-
-class Vec2 :
-    def __init__(self, x, y) :
-        self.x = x
-        self.y = y
-
-class Pixel :
-    def __init__(self, pos, brightness) :
-        self.pos = pos
-        self.brightness = brightness
-
-class perlinNoise :
-    def __init__(self, size, points, scale, threshold) :
-        self.size = size
-        self.points = points
-        self.scale = scale
-        self.threshold = threshold
 
 def generate_points(noise) :
     points_temps = []
     for i in range(noise.scale) :
-        points_temps.append(Vec2(random.randint(0, noise.size), random.randint(0, noise.size)))
+        points_temps.append(noiseManager.Vec2(random.randint(0, noise.size), random.randint(0, noise.size)))
 
     return points_temps
 
@@ -43,7 +27,10 @@ def generateNoiseMap(noiseParameters) :
             index = (y * noiseParameters.size) + x
             color = (255, 255, 255)
 
-            pixels[index] = Pixel(Vec2(x, y), RgbToHex(color))
+            pixels[index] = noiseManager.Pixel(
+                noiseManager.Vec2(x, y),
+                RgbToHex(color)
+            )
 
     return pixels
 
@@ -53,7 +40,7 @@ def RgbToHex(rgb) :
 
 def drawNoise() :
     if _canvas != None :
-        noise = perlinNoise(512, [], 10, 15)
+        noise = noiseManager.perlinNoise(512, [], 10, 15)
         pixels = generateNoiseMap(noise)
 
         for y in range(0, noise.size) :
